@@ -1,0 +1,13 @@
+# gqlgen.yml
+schema:
+  - graph/schema.graphql
+exec:
+  filename: graph/generated/generated.go
+  package: generated
+model:
+  filename: graph/generated/model/models_gen.go
+  package: generated
+resolver:
+  filename: graph/resolver.go
+  package: resolvers
+  type: Resolver
