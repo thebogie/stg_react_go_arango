@@ -1,0 +1,32 @@
+.largecategorycard-content {
+  background-color: #efefef;
+  border-radius: 10px;
+  min-height: 50px;
+}
+
+.largecategorycard-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px 4px 20px;
+  color: #aeaeae;
+  font-size: 24px;
+}
+
+.categorylineitem-repeatingperiod {
+  font-size: 12px;
+  color: #bebebe;
+  margin-left: 4px;
+}
+
+.largecategorycard-novalues {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: auto;
+  color: #aeaeae;
+  font-size: 24px;
+  padding-top: 10px;
+}
