@@ -1,48 +1,124 @@
-# Budgetster Frontend
+# React Typescript Authentication example with Hooks, Axios and Rest API
 
-### About
+Build React Typescript Authentication and Authorization example using React Hooks, React Router, Axios and Bootstrap (without Redux):
+- JWT Authentication Flow for User Signup & User Login
+- Project Structure for React Typescript Authentication (without Redux) with React Router & Axios
+- Creating React Components with Form Validation using Formik and Yup
+- React Typescript Components for accessing protected Resources (Authorization)
+- Dynamic Navigation Bar in React Typescript App
 
-Personal finance planner. Frontend with React + Typescript. Mobile with React Native + Typescript. Backend with Node.js + Express + Typescript can be found [here](https://github.com/jacoblurie29/budgetster-backend).
+For instruction, please visit:
+> [React Typescript Authentication example with Hooks, Axios and Rest API](https://www.bezkoder.com/react-typescript-authentication-example/)
 
-### Prerequisites
+Signup Page:
 
-- [Node.js](https://nodejs.org/en/) (v12.16.1)
+![react-typescript-authentication-example-signup](react-typescript-authentication-example-signup.png)
 
-### Installing
+Form Validation:
 
-1. Clone the repo
+![react-typescript-authentication-example-form-validation](react-typescript-authentication-example-form-validation.png)
 
-```sh
-git clone https://github.com/jacoblurie29/budgetster-backend
+Login Page:
+
+![react-typescript-authentication-example-login](react-typescript-authentication-example-login.png)
+
+Profile Page:
+
+![react-typescript-authentication-example-profile-page](react-typescript-authentication-example-profile-page.png)
+
+This React Client works well with following back-end Server:
+> [Spring Boot: JWT Authentication & Authorization with MySQL](https://www.bezkoder.com/spring-boot-jwt-authentication/)
+
+> [Spring Boot: JWT Authentication & Authorization with PostgreSQL](https://www.bezkoder.com/spring-boot-security-postgresql-jwt-authentication/)
+
+> [Spring Boot: JWT Authentication & Authorization with MongoDB](https://www.bezkoder.com/spring-boot-jwt-auth-mongodb/)
+
+> [Node Express: JWT Authentication & Authorization with MySQL](https://www.bezkoder.com/node-js-jwt-authentication-mysql/)
+
+> [Node Express: JWT Authentication & Authorization with PostgreSQL](https://www.bezkoder.com/node-js-jwt-authentication-postgresql/)
+
+> [Node Express: WT Authentication & Authorization with MongoDB](https://www.bezkoder.com/node-js-mongodb-auth-jwt/)
+
+Related Posts:
+> [React Hooks Typescript example Project with Axios and Web API](https://www.bezkoder.com/react-typescript-api-call/)
+
+> [React (Javascript) CRUD example to consume Web API](https://www.bezkoder.com/react-crud-web-api/)
+
+> [React Redux CRUD App example with Rest API](https://www.bezkoder.com/react-redux-crud-example/)
+
+> [React (Hooks) CRUD example to consume Web API](https://www.bezkoder.com/react-hooks-crud-axios-api/)
+
+> [React Table example: CRUD App with react-table v7](https://www.bezkoder.com/react-table-example-hooks-crud/)
+
+Using Material UI instead of Bootstrap:
+> [React Material UI examples with a CRUD Application](https://www.bezkoder.com/react-material-ui-examples-crud/)
+
+More Practice:
+> [React Pagination example](https://www.bezkoder.com/react-pagination-material-ui/)
+
+> [React File Upload example](https://www.bezkoder.com/react-file-upload-axios/)
+
+> [React JWT Authentication & Authorization example](https://www.bezkoder.com/react-jwt-auth/)
+
+> [React + Redux: JWT Authentication & Authorization example](https://www.bezkoder.com/react-redux-jwt-auth/)
+
+Fullstack with Node Express:
+> [React + Node Express + MySQL](https://www.bezkoder.com/react-node-express-mysql/)
+
+> [React + Node Express + PostgreSQL](https://www.bezkoder.com/react-node-express-postgresql/)
+
+> [React + Node Express + MongoDB](https://www.bezkoder.com/react-node-express-mongodb-mern-stack/)
+
+Fullstack with Spring Boot:
+> [React + Spring Boot + MySQL](https://www.bezkoder.com/react-spring-boot-crud/)
+
+> [React + Spring Boot + PostgreSQL](https://www.bezkoder.com/spring-boot-react-postgresql/)
+
+> [React + Spring Boot + MongoDB](https://www.bezkoder.com/react-spring-boot-mongodb/)
+
+Fullstack with Django:
+
+> [React + Django Rest Framework](https://www.bezkoder.com/django-react-axios-rest-framework/)
+
+Serverless:
+> [React Firebase CRUD App with Realtime Database](https://www.bezkoder.com/react-firebase-crud/)
+
+> [React Firestore CRUD App example | Firebase Cloud Firestore](https://www.bezkoder.com/react-firestore-crud/)
+
+Integration (run back-end & front-end on same server/port)
+> [Integrate React with Spring Boot](https://www.bezkoder.com/integrate-reactjs-spring-boot/)
+
+> [Integrate React with Node Express](https://www.bezkoder.com/integrate-react-express-same-server-port/)
+
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+### Set port
+.env
+```
+PORT=8081
 ```
 
-2. Install NPM packages
+## Project setup
 
-```sh
+In the project directory, you can run:
+
+```
 npm install
+# or
+yarn install
 ```
 
-3. Run the application
+or
 
-```sh
-npm run dev
+### Compiles and hot-reloads for development
+
+```
+npm start
+# or
+yarn start
 ```
 
-### Visual Plan (figma):
+Open [http://localhost:8081](http://localhost:8081) to view it in the browser.
 
-<img width="877" alt="Screen Shot 2023-05-24 at 5 33 03 PM" src="https://github.com/jacoblurie29/Budgetster/assets/19592236/2c572788-a138-4f5d-b142-ec27992a0624">
-<br />
-<br />
-
-<img width="877" alt="Screen Shot 2023-06-18 at 3 14 55 PM" src="https://github.com/jacoblurie29/budgetster-frontend/assets/19592236/cddd3480-61ea-450e-94a1-9b2afe137af8">
-
-### Built With
-
-- [React](https://reactjs.org/)
-- [Typescript](https://www.typescriptlang.org/)
-- [Redux Toolkit](https://redux-toolkit.js.org/)
-- [Vite](https://vitejs.dev/)
-- [Jest](https://jestjs.io/)
-- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
-- [React Router](https://reactrouter.com/)
-- [React Hook Form](https://react-hook-form.com/)
+The page will reload if you make edits.

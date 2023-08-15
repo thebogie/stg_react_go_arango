@@ -30,6 +30,11 @@ GRAPHQL http://localhost:50002/graphql
 mutation LoginUser{
   loginUser(email: "mitch@gmail.com", password: "letmein") {
     token
+    user {
+      _id
+    }
+
+
   }
 }
 

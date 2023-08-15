@@ -1,23 +1,23 @@
 # graph/schema.graphql
 type User {
-  _key: String!
-_id:      String!
-rev       :String!
-firstname :String!
-email     :String!
-password :String!
+    _key:String!
+    _id:String!
+    rev:String!
+    firstname:String!
+    email:String!
+    password:String!
 }
 
 type AuthPayload {
-  token: String!
-  user: User!
+    token: String!
+    user: User!
 }
 
 type Query {
-  findUserByEmail(email: String!): User!
+    findUserByEmail(email: String!): User!
 }
 
 type Mutation {
-  registerUser(username: String!, email: String!, password: String!): AuthPayload!
-  loginUser(email: String!, password: String!): AuthPayload!
+    registerUser(username: String!, email: String!, password: String!): AuthPayload!
+    loginUser(email: String!, password: String!): AuthPayload!
 }
