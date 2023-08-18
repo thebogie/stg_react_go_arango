@@ -51,7 +51,7 @@ func (uu userUsecase) LoginUser(ctx context.Context, input model.Login) (*model.
 
 	}
 
-	return nil, nil
+	return founduser, nil
 }
 
 func (uu userUsecase) RefreshToken(ctx context.Context, input model.RefreshTokenInput) (string, error) {
