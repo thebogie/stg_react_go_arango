@@ -1,33 +1,15 @@
-# ======================
-#  GO FIRST STAGE
-# ======================
-
-FROM golang:latest as builder
-USER ${USER}
-WORKDIR /usr/src/app
-COPY go.mod \
-  go.sum ./
+# builder image
+FROM golang:alpine3.15 as builder
+RUN mkdir /build
+ADD . /build/
+WORKDIR /build
 RUN go mod download
-COPY . ./
-ENV GO111MODULE="on" \
-  GOARCH="amd64" \
-  GOOS="linux" \
-  CGO_ENABLED="0"
-RUN apt-get clean \
-  && apt-get remove
+RUN CGO_ENABLED=0 GOOS=linux go build -a -o main server.go
 
-# ======================
-#  GO FINAL STAGE
-# ======================
 
-FROM builder
-WORKDIR /usr/src/app
-RUN apt-get update \
-  && apt-get install -y \
-  make \
-  vim \
-  build-essential
-COPY --from=builder . ./usr/src/app
-RUN make goprod
-EXPOSE 50002
-CMD ["./main"]
+# generate clean, final image for end users
+FROM alpine:3.15
+COPY --from=builder /build/main .
+
+# executable
+ENTRYPOINT [ "./main" ]
