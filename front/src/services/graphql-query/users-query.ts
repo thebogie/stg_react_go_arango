@@ -40,15 +40,16 @@ export const userByQuery = (id: string) => `
     }
 `;
 
-export const loginUserByQuery = (data: IUser) =>
-    `
-    mutation LoginUser{
-        loginUser(email: "${data.email}", password: "${data.password}") 
-        {
-           token
-           user {
-             _id
-           }
-        }
-    }
+export const loginUserByQuery = (data: IUser) => `
+mutation {
+  loginUser(input: {
+    username: "${data.email}"
+    password: "${data.password}"
+  }) {
+     
+    _id
+    _key
+   
+  }
+}
 `;
