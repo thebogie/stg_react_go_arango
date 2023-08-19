@@ -63,6 +63,8 @@ func (c *CookieAccess) GenerateAuthCookie(tokenString string) {
 		Name:     "token",
 		Value:    tokenString,
 		Expires:  time.Now().Add(time.Hour * 24),
+		Secure:   true,
+		SameSite: http.SameSiteNoneMode,
 		HttpOnly: true,
 		Path:     "/",
 	}

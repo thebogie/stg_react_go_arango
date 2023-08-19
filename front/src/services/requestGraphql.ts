@@ -4,6 +4,7 @@ const makeGraphQLCall = async (query: string, variables: any = {}) => {
     const config = {
         method: 'POST',
         url: API_BASE_URL,
+        withCredentials:true,
         headers: {
             'Content-Type': 'application/json',
         },

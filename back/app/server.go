@@ -35,10 +35,10 @@ func main() {
 	router.Use(middleware.Recoverer)
 
 	cors := cors.New(cors.Options{
-		AllowedOrigins:   []string{"*"},
-		AllowedMethods:   []string{"POST", "GET", "PUT", "PATCH", "DELETE"},
+		AllowedOrigins:   []string{"http://localhost:50003", "http://192.68.86.45:50003"},
+		AllowedMethods:   []string{"OPTIONS", "POST", "GET", "PUT", "PATCH", "DELETE"},
 		AllowedHeaders:   []string{"*"},
-		ExposedHeaders:   []string{"Link"},
+		ExposedHeaders:   []string{"Link", "Set-Cookie"},
 		AllowCredentials: true,
 		MaxAge:           300,
 	})
