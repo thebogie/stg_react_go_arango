@@ -21,7 +21,7 @@ func (r *mutationResolver) Login(ctx context.Context, input model.Login) (string
 }
 
 // LoginUser is the resolver for the loginUser field.
-func (r *mutationResolver) LoginUser(ctx context.Context, input model.Login) (*model.UserData, error) {
+func (r *mutationResolver) LoginUser(ctx context.Context, input model.Login) (*model.LoginData, error) {
 	return r.User.LoginUser(ctx, input)
 }
 

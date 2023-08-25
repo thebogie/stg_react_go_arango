@@ -12,6 +12,11 @@ type Login struct {
 	Password string `json:"password"`
 }
 
+type LoginData struct {
+	Token    string    `json:"token"`
+	Userdata *UserData `json:"userdata"`
+}
+
 type NewTodo struct {
 	Title       string `json:"title"`
 	Description string `json:"description"`

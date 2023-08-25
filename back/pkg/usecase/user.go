@@ -15,7 +15,7 @@ type userUsecase struct {
 type UserUsecase interface {
 	Create(ctx context.Context, input model.NewUser) (string, error)
 	Login(ctx context.Context, input model.Login) (string, error)
-	LoginUser(ctx context.Context, input model.Login) (*model.UserData, error)
+	LoginUser(ctx context.Context, input model.Login) (*model.LoginData, error)
 	RefreshToken(ctx context.Context, input model.RefreshTokenInput) (string, error)
 }
 
@@ -34,9 +34,14 @@ func (uu userUsecase) Login(ctx context.Context, input model.Login) (string, err
 	return "", nil
 }
 
-func (uu userUsecase) LoginUser(ctx context.Context, input model.Login) (*model.UserData, error) {
+func (uu userUsecase) LoginUser(ctx context.Context, input model.Login) (*model.LoginData, error) {
 
 	founduser, _ := uu.userRepository.Login(ctx, input)
+
+	loggedindata := &model.LoginData{
+		Token:    "",
+		Userdata: founduser,
+	}
 
 	if helper.Authenticate(input.Password, founduser.Password) {
 		// legit create jwt cookie
@@ -47,11 +52,13 @@ func (uu userUsecase) LoginUser(ctx context.Context, input model.Login) (*model.
 
 		tokenString, _ := cookieaccess.GenerateToken(founduser.Email)
 
+		//TODO: what if cookie fails?
 		cookieaccess.GenerateAuthCookie(tokenString)
+		loggedindata.Token = tokenString
 
 	}
 
-	return founduser, nil
+	return loggedindata, nil
 }
 
 func (uu userUsecase) RefreshToken(ctx context.Context, input model.RefreshTokenInput) (string, error) {

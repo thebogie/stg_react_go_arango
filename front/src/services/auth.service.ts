@@ -27,12 +27,12 @@ export const login = (email: string, password: string) => {
 
           const loggedinUser: IUser = {
               accessToken: response.data.data.loginUser.token,
-              email: response.data.data.loginUser.user.email,
+              email: response.data.data.loginUser.userdata.email,
               password: "",
-              _key: response.data.data.loginUser.user._key ,
-              _id:  response.data.data.loginUser.user._id,
-              rev:  response.data.data.loginUser.user.rev,
-              firstname:  response.data.data.loginUser.user.firstname ,
+              _key: response.data.data.loginUser.userdata._key ,
+              _id:  response.data.data.loginUser.userdata._id,
+              rev:  response.data.data.loginUser.userdata.rev,
+              firstname:  response.data.data.loginUser.userdata.firstname ,
           };
 
         localStorage.setItem("user", JSON.stringify(loggedinUser));

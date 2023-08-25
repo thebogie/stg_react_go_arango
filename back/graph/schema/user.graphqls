@@ -13,6 +13,11 @@ type UserData {
   password:String!
 }
 
+type LoginData {
+  token: String!
+  userdata: UserData!
+}
+
 input RefreshTokenInput {
   token: String!
 }
@@ -30,6 +35,6 @@ input Login {
 type Mutation {
   createUser(input: NewUser!): String!
   login(input: Login!): String!
-  loginUser(input: Login!): UserData!
+  loginUser(input: Login!): LoginData!
   refreshToken(input: RefreshTokenInput!): String!
 }

@@ -47,8 +47,15 @@ mutation {
     password: "${data.password}"
   }) {
      
-    _id
-    _key
+    token
+    userdata {
+     _key
+  _id
+  rev
+  firstname
+  email
+  password
+    }
    
   }
 }

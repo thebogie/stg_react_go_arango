@@ -10,7 +10,7 @@ import (
 type UserController interface {
 	Create(ctx context.Context, input model.NewUser) (string, error)
 	Login(ctx context.Context, input model.Login) (string, error)
-	LoginUser(ctx context.Context, input model.Login) (*model.UserData, error)
+	LoginUser(ctx context.Context, input model.Login) (*model.LoginData, error)
 	RefreshToken(ctx context.Context, input model.RefreshTokenInput) (string, error)
 }
 
@@ -32,7 +32,7 @@ func (uc userController) Login(ctx context.Context, input model.Login) (string, 
 	return uc.userUsecase.Login(ctx, input)
 }
 
-func (uc userController) LoginUser(ctx context.Context, input model.Login) (*model.UserData, error) {
+func (uc userController) LoginUser(ctx context.Context, input model.Login) (*model.LoginData, error) {
 	return uc.userUsecase.LoginUser(ctx, input)
 }
 
