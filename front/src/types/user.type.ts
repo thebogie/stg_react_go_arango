@@ -10,3 +10,4 @@ export default interface IUser {
   accessToken: string | undefined,
   roles?: Array<string>
 }
+

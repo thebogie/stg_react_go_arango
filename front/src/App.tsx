@@ -77,7 +77,7 @@ const App: React.FC = () => {
           {currentUser && (
             <li className="nav-item">
               <Link to={"/user"} className="nav-link">
-                User
+                User Stats
               </Link>
             </li>
           )}
@@ -87,7 +87,7 @@ const App: React.FC = () => {
           <div className="navbar-nav ml-auto">
             <li className="nav-item">
               <Link to={"/profile"} className="nav-link">
-                {currentUser._id}
+                {currentUser.firstname}
               </Link>
             </li>
             <li className="nav-item">

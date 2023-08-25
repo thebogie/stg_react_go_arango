@@ -9,7 +9,10 @@ const BoardUser: React.FC = () => {
   useEffect(() => {
     getUserBoard().then(
       (response) => {
-        setContent(response.data);
+        const data = localStorage.getItem("games");
+        if (data != null) {
+          setContent("Total games played:" + data.length);
+        }
       },
       (error) => {
         const _content =

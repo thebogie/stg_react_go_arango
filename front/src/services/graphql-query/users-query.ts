@@ -1,5 +1,31 @@
 import IUser from "../../types/user.type";
 
+
+
+export const loginUserByQuery = (data: IUser) => `
+mutation {
+  loginUser(input: {
+    username: "${data.email}"
+    password: "${data.password}"
+  }) {
+     
+    token
+    userdata {
+     _key
+  _id
+  rev
+  firstname
+  email
+  password
+    }
+   
+  }
+}
+`;
+
+
+
+
 export const usersByQuery = `
     {
         users {
@@ -40,23 +66,3 @@ export const userByQuery = (id: string) => `
     }
 `;
 
-export const loginUserByQuery = (data: IUser) => `
-mutation {
-  loginUser(input: {
-    username: "${data.email}"
-    password: "${data.password}"
-  }) {
-     
-    token
-    userdata {
-     _key
-  _id
-  rev
-  firstname
-  email
-  password
-    }
-   
-  }
-}
-`;
